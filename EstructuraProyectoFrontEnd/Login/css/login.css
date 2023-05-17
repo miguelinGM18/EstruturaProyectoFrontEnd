@@ -18,8 +18,8 @@
     }
     .login-screen {
     background-color: #EAECEE ;
-    padding: 20px;
-    border-radius: 5px
+    padding: 9%;
+    border-radius: 5px;
     }
     
     .app-title {
@@ -39,6 +39,7 @@
     background-color: #ECF0F1;
     border: 2px solid transparent;
     border-radius: 3px;
+    font-family: cursive;
     font-size: 16px;
     font-weight: 200;
     padding: 10px 0;
