@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN</title>
     <link rel="stylesheet" href="../css/Login.css">
+	<script src="../js/lib/jquery.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/login.js"></script>
 </head>
@@ -19,16 +20,16 @@
 
 			<div class="loginForm">
 				<div class="control-group">
-				<input type="text" class="login-field"  placeholder="Usuario" id="UserName" >
+				<input type="text" class="login-field"  placeholder="Usuario" id="inpUser" >
 				<label class="login-field-icon fui-user" for="login-name"></label>
 				</div>
 
 				<div class="control-group">
-				<input type="password" class="login-field"  placeholder="Contraseña" id="Password">
+				<input type="password" class="login-field"  placeholder="Contraseña" id="inpPass">
 				<label class="login-field-icon fui-lock" for="login-pass"></label>
 				</div>
 
-				<input type="button" class="btn btn-primary btn-large btn-block" onclick="login()" value="Ingresar"></input>
+				<input type="button" class="btn btn-primary btn-large btn-block" value="Ingresar" id="btnLogin"></input>
 				<a class="login-link" href="../html/Login_forget.html">¿Olvidaste tu contraseña?</a>
 			</div>
 		</div>

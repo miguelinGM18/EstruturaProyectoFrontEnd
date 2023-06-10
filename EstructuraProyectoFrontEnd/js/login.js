@@ -1,41 +1,40 @@
-
-/*
-const loginForm = document.querySelector('#loginForm')
-loginForm.addEventListener('button', (e)=>{
-    e.preventDefault()
-    const Password = document.querySelector('#Password').value
-    const UserName = JSON.parse(localStorage.getItem(UserName)) || []
-    const valUser = UserName.find(UserName => UserName.Password === Password)
-
-    if(!valUser){
-        return alert ("Acceso denegado")
-    } 
-    alert('Bienvenido')
-    window.location.href = 'Home.html'
-})
-
-
-
-
-
-
-
-/*
-var settings = {
-  "url": "https://localhost:7110/api/Identity/Login?=",
-  "method": "POST",
-  "timeout": 0,
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "data": JSON.stringify({
-    "UserName": "EseWey",
-    "Password": "Password"
-  }),
-};
-
-$.ajax(settings).done(function (login) {
-  console.log(login);
-  
+$(document).ready(function(){
+  $('#btnLogin').on("click",function(){
+    let usuario = $('#inpUser').val();
+    let pass = $('#inpPass').val();
+    if(usuario === "" || pass === ""){
+      alert("Hay campos vacios, ingrese usuario y contreña por favor.");
+      return;
+    }
+    data = JSON.stringify({
+      "UserName": usuario,
+      "Password": pass
+    });
+    $.ajax({
+      type: "POST",
+      url: "https://localhost:7110/api/Identity/Login",
+      data: data,
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      success: function (data) {  
+        console.log(data);     
+        if(!data.Success)
+        {
+          alert(data.Message);
+          return;
+        }
+        else
+        {
+          $(location).attr('href','http://127.0.0.1:5500/html/Home.html');
+        }
+       console.log(data);
+      },
+      failure: function (data) {
+       alert(data);
+      },
+      error: function (data) {
+       alert(data);
+      }
+     });
+  });
 });
-*/
